@@ -10,5 +10,4 @@ Minimal setup required; execute script once with a compatible executor and that'
 
 ## Compatible executors
 
-Wave
-Solara
+Only tested it with Wave, please let me know if the script works other executors aswell
