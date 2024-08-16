@@ -11,3 +11,7 @@ Minimal setup required; execute script once with a compatible executor and that'
 ## Compatible executors
 
 Only tested it with Wave, please let me know if the script works with other executors aswell
+
+## Commands
+
+Every command begins with the prefix `/e`
