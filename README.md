@@ -14,4 +14,5 @@ Only tested it with Wave, please let me know if the script works with other exec
 
 ## Commands
 
-Every command begins with the prefix `/e` `command` `arguments`
+This is how the structure looks like; `/e` `[command]` `[arguments]`
+Currently only chat commands are stable and working!
