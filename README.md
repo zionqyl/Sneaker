@@ -4,7 +4,7 @@
 
 Main Script:
 ```lua
-_G.AltAccountController = 0 -- UserId of your main account to control alt accounts
+getgenv().AltAccountController = 0 -- UserId of your main account to control alt accounts
 loadstring(game:HttpGet("https://raw.githubusercontent.com/zionqyl/Sneaker/main/Latest.lua"))()
 ```
 Sniper:
