@@ -1,3 +1,13 @@
+getgenv().settings = {
+    Controller = 59386847,
+    Config = {
+        AutoFarm = true,
+        LowGraphics = true,
+        AutoPCOffer = true,
+        KeepMoney = 10000
+    }
+}
+
 if QYL_LOADED or not getgenv().settings then
     return
 end
@@ -11,7 +21,7 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(state, id)
     if (not tpCheck) and queueteleport then
         tpCheck = true
         if id == 12991635726 then
-            queueteleport("getgenv().settings = " .. getgenv().settings .. "; loadstring(game:HttpGet('https://raw.githubusercontent.com/zionqyl/Sneaker/main/bootstrapper.lua'))()")
+            queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/zionqyl/Sneaker/main/bootstrapper.lua'))()")
         end
     end
 end)
@@ -135,6 +145,7 @@ local function autoFarm()
                         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("BuyNewOfferFunction"):InvokeServer()
                     end)
                 end
+                local offers = ReplicatedStorage:WaitForChild('RemoteEvents'):WaitForChild('RefreshPageFunction'):InvokeServer()
                 for i = 1, PCProgress.Value do
                     task.spawn(function()
                         local args = {
