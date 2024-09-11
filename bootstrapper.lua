@@ -171,6 +171,22 @@ local function autoFarm()
     end
 end
 
+local gc = getconnections or get_signal_cons
+if gc then
+    for i, v in pairs(gc(LocalPlayer.Idled)) do
+        if v['Disable'] then
+            v['Disable'](v)
+        elseif v['Disconnect'] then
+            v['Disconnect'](v)
+        end
+    end
+else
+    LocalPlayer.Idled:Connect(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end)
+end
+
 if getgenv().settings.Controller ~= Players.LocalPlayer.UserId then
     local check = Players:GetPlayerByUserId(getgenv().settings.Controller)
     if check then
