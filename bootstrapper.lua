@@ -14,6 +14,10 @@ end
 
 pcall(function() getgenv().QYL_LOADED = true end)
 
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 
 local tpCheck = false
