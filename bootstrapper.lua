@@ -187,6 +187,10 @@ else
     end)
 end
 
+GuiService.ErrorMessageChanged:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zionqyl/Utils/main/Serverhop.lua"))()
+end)
+
 if getgenv().settings.Controller ~= Players.LocalPlayer.UserId then
     local check = Players:GetPlayerByUserId(getgenv().settings.Controller)
     if check then
